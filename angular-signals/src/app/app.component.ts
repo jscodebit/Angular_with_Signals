@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RouterOutlet } from '@angular/router';
@@ -12,4 +12,12 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-signals';
+
+  item = signal<string | undefined>('hello');
+
+  items = signal<{id: number, name: string}[]>([
+    { id: 1, name: 'Andy'}, 
+    { id: 2, name: 'Bob'}, 
+    { id: 3, name: 'Charlie'}]);
+
 }
